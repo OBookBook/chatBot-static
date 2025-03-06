@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 1000;
+  max-width: 90vw;
 }
 
 .chat-header {
@@ -29,6 +30,7 @@ body {
 .chat-header h3 {
   margin: 0;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 #chatbox {
@@ -39,6 +41,7 @@ body {
   background-color: #f9f9f9;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
+  max-height: 50vh;
 }
 
 .message-container {
@@ -53,6 +56,8 @@ body {
   padding: 10px 15px;
   border-radius: 18px;
   margin-bottom: 10px;
+  word-wrap: break-word;
+  font-size: 0.9rem;
 }
 
 .user-message {
@@ -103,4 +108,57 @@ body {
 
 #sendButton:hover {
   background-color: #3a5ce5;
+}
+
+@media screen and (max-width: 768px) {
+  .chat-container {
+    bottom: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+    max-width: 100%;
+  }
+
+  .chat-header h3 {
+    font-size: 0.9rem;
+  }
+
+  #chatbox {
+    height: 300px;
+  }
+
+  .user-message,
+  .bot-message {
+    max-width: 85%;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  #userInput {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  #sendButton {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chat-container {
+    bottom: 5px;
+    right: 5px;
+    width: calc(100% - 10px);
+  }
+
+  #chatbox {
+    height: 250px;
+  }
+
+  .user-message,
+  .bot-message {
+    max-width: 90%;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
 }
